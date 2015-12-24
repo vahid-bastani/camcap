@@ -1,0 +1,21 @@
+# default camcap configuration file
+# Authors: Vahid Bastani
+# Syntax:
+#    - line starts with '#' is regarded as comment
+#    - empty lines are ignored
+#    - each task is written in one line
+# Task syntax:
+#   ┌──── capture duration in seconds (e.g. 100)
+#   │ ┌───── min (same as crontab format)
+#   │ │ ┌───── hour (same as crontab format)
+#   │ │ │ ┌───── day of month (same as crontab format)
+#   │ │ │ │ ┌───── month (same as crontab format)
+#   │ │ │ │ │ ┌───── day of week (same as crontab format)
+#   │ │ │ │ │ │
+#   * * * * * * stream_url stream_format
+
+# Examples:
+# capture the url for 10 minutes everyday at 9:00, 10:00, 11:00, and 12:00
+600 0 9-12 * * * http://141.89.114.98/cgi-bin/video320x240.mjpg mjpeg
+# capture the url for one minute each 2 minutes
+60  */2 * * * * http://camera.ehps.ncsu.edu:8100/c8 mjpeg
